@@ -46,6 +46,24 @@ function RPG() {
     alert("You have to choose at least one type of character!");
     return;
   }
+  // Conditional's that adds every character types-array depending on what the user selects, then pushing the randomly generated characters
+  if (chosenSC) {
+    varietyPlaceHolder= varietyPlaceHolder.concat(specialCharacters);
+    selectedPlaceholder.push(RAG(specialCharacters));
+  }
+  if (chosenNC) {
+    varietyPlaceHolder= varietyPlaceHolder.concat(numericCharacters);
+    selectedPlaceholder.push(RAG(numericCharacters));
+  }
+  if (chosenLCC) {
+    varietyPlaceHolder= varietyPlaceHolder.concat(lowerCasedCharacters);
+    selectedPlaceholder.push(RAG(lowerCasedCharacters));
+  }
+  if (chosenUCC) {
+    varietyPlaceHolder= varietyPlaceHolder.concat(upperCasedCharacters);
+    selectedPlaceholder.push(RAG(upperCasedCharacters));
+  }
+  
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
