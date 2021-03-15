@@ -30,5 +30,22 @@ function writePassword() {
 
 }
 
+// Function that creates a password depending on what the user selects
+function RPG() {
+  // Variables with placeholder arrays
+  var finalPlaceHolder= [];
+  var varietyPlaceHolder= [];
+  var selectedPlaceholder= [];
+  // Variable that returns an integer based off how long the user wants their password as long as it's above 8 or below 129 characters.
+  var pwLength= parseInt
+  (prompt("Choose a number from 8 to 128 to choose your password length."));
+  // Conditional's making sure the password is the proper length
+    if(pwLength< 8) {
+    alert("Your password needs to be at least 8 characters or longer.") 
+  }
+  if(pwLength> 128) {
+    alert("Your password needs to be 128 characters or less.")
+  }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
