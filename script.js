@@ -64,6 +64,16 @@ function RPG() {
     selectedPlaceholder.push(RAG(upperCasedCharacters));
   }
   
+  // Iterating over pwLength and pushing finalPlaceholder character 
+  for (var i= 0 ; i < pwLength; i++) {
+    var character = RAG(varietyPlaceHolder);
+    finalPlaceHolder.push(character);
+  }
+  
+  // Turns finalPlaceholder pushed characters into a password
+  return finalPlaceHolder.join('');
+}
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
