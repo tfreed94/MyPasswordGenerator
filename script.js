@@ -18,18 +18,6 @@ function RAG(array) {
   return RAE;
 }
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = RPG();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
 // Function that creates a password depending on what the user selects
 function RPG() {
   // Variables with placeholder arrays
@@ -46,6 +34,29 @@ function RPG() {
   if(pwLength> 128) {
     alert("Your password needs to be 128 characters or less.")
   }
+  
+  // Confirmation variables for different types of characters
+  var chosenSC = confirm("Choose special characters?");
+  var chosenNC = confirm("Choose numeric characters?");
+  var chosenLCC = confirm("Choose lowercase characters?");
+  var chosenUCC = confirm("Choose uppercase characters?");
+  // Conitional making sure the user selects a character type
+  if(!chosenSC && !chosenNC && !chosenLCC && !chosenUCC)
+  {
+    alert("You have to choose at least one type of character!");
+    return;
+  }
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = RPG();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
