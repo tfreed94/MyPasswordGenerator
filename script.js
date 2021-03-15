@@ -18,62 +18,6 @@ function RAG(array) {
   return RAE;
 }
 
-// Function that creates a password depending on what the user selects
-function RPG() {
-  // Variables with placeholder arrays
-  var finalPlaceHolder= [];
-  var varietyPlaceHolder= [];
-  var selectedPlaceholder= [];
-  // Variable that returns an integer based off how long the user wants their password as long as it's above 8 or below 129 characters.
-  var pwLength= parseInt
-  (prompt("Choose a number from 8 to 128 to choose your password length."));
-  // Conditional's making sure the password is the proper length
-    if(pwLength< 8) {
-    alert("Your password needs to be at least 8 characters or longer.") 
-  }
-  if(pwLength> 128) {
-    alert("Your password needs to be 128 characters or less.")
-  }
-  
-  // Confirmation variables for different types of characters
-  var chosenSC = confirm("Choose special characters?");
-  var chosenNC = confirm("Choose numeric characters?");
-  var chosenLCC = confirm("Choose lowercase characters?");
-  var chosenUCC = confirm("Choose uppercase characters?");
-  // Conitional making sure the user selects a character type
-  if(!chosenSC && !chosenNC && !chosenLCC && !chosenUCC)
-  {
-    alert("You have to choose at least one type of character!");
-    return;
-  }
-  // Conditional's that adds every character types-array depending on what the user selects, then pushing the randomly generated characters
-  if (chosenSC) {
-    varietyPlaceHolder= varietyPlaceHolder.concat(specialCharacters);
-    selectedPlaceholder.push(RAG(specialCharacters));
-  }
-  if (chosenNC) {
-    varietyPlaceHolder= varietyPlaceHolder.concat(numericCharacters);
-    selectedPlaceholder.push(RAG(numericCharacters));
-  }
-  if (chosenLCC) {
-    varietyPlaceHolder= varietyPlaceHolder.concat(lowerCasedCharacters);
-    selectedPlaceholder.push(RAG(lowerCasedCharacters));
-  }
-  if (chosenUCC) {
-    varietyPlaceHolder= varietyPlaceHolder.concat(upperCasedCharacters);
-    selectedPlaceholder.push(RAG(upperCasedCharacters));
-  }
-
-  // Iterating over pwLength and pushing finalPlaceholder character 
-  for (var i= 0 ; i < pwLength; i++) {
-    var character = RAG(varietyPlaceHolder);
-    finalPlaceHolder.push(character);
-  }
-  
-  // Turns finalPlaceholder pushed characters into a password
-  return finalPlaceHolder.join('');
-}
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
