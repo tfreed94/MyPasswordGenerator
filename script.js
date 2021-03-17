@@ -23,7 +23,6 @@ function RPG() {
   // Variables with placeholder arrays
   var finalPlaceHolder= [];
   var varietyPlaceHolder= [];
-  var selectedPlaceholder= [];
   // Variable that returns an integer based off how long the user wants their password as long as it's above 8 or below 129 characters.
   var pwLength= parseInt
   (prompt("Choose a number from 8 to 128 to choose your password length."));
@@ -49,19 +48,15 @@ function RPG() {
   // Conditional's that adds every character types-array depending on what the user selects, then pushing the randomly generated characters
   if (chosenSC) {
     varietyPlaceHolder= varietyPlaceHolder.concat(specialCharacters);
-    selectedPlaceholder.push(RAG(specialCharacters));
   }
   if (chosenNC) {
     varietyPlaceHolder= varietyPlaceHolder.concat(numericCharacters);
-    selectedPlaceholder.push(RAG(numericCharacters));
   }
   if (chosenLCC) {
     varietyPlaceHolder= varietyPlaceHolder.concat(lowerCasedCharacters);
-    selectedPlaceholder.push(RAG(lowerCasedCharacters));
   }
   if (chosenUCC) {
     varietyPlaceHolder= varietyPlaceHolder.concat(upperCasedCharacters);
-    selectedPlaceholder.push(RAG(upperCasedCharacters));
   }
 
   // Iterating over pwLength and pushing finalPlaceholder character 
